@@ -19,6 +19,8 @@ export LC_ALL=C
 export LANG=C
 export LANGUAGE=C
 
+# Control-C clears screen
+trap 'clear; exit;' 2
 
 # Config Options {{{
 
@@ -1249,6 +1251,9 @@ printinfo
 # If enabled take a screenshot
 [ "$scrot" == "on" ] && takescrot
 
+# Pause at end, clear on keypress
+read -n1 -s
+clear
 
 # }}}
 
